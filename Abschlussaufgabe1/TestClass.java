@@ -87,6 +87,11 @@ public class TestClass {
         testList("all publications", false, true, "test00", "test01", "test02");
         testList("list invalid publications", false, true, "test00", "test01", "test02");
 
+        testOutput("add journal OO: Architecture & Design,By: The Nerds", "Ok");
+        testOutput("add article to journal OO: Architecture & Design:ooad,1000,X:treme", "Ok");
+        testOutput("add keywords to journal OO: Architecture & Design:hc", "Ok");
+        testPrefix("add article to journal OO: Architecture & Design xxad,2000,X:treme", "Error, ");
+
         testOutput("quit", "Ok");
         assertExit();
         System.out.println("--- Syntax Test finished ---");
