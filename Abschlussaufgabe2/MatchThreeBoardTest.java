@@ -79,7 +79,7 @@ public class MatchThreeBoardTest {
         TestHelper.expect(() -> new MatchThreeBoard(Token.set("ABC"), "ABC;AB"), TokenStringParseException.class);
         TestHelper.expect(() -> new MatchThreeBoard(Token.set("ABC"), "ABC;ABD"), TokenStringParseException.class);
         TestHelper.expect(() -> new MatchThreeBoard(Token.set("ABC"), "ABC;A;D"), TokenStringParseException.class);
-        TestHelper.expect(() -> new MatchThreeBoard(Token.set("ABC"), "ABC;ABD;"), TokenStringParseException.class);
+        TestHelper.expect(() -> new MatchThreeBoard(Token.set("ABC"), "ABC;ABC;"), TokenStringParseException.class);
         TestHelper.expect(() -> new MatchThreeBoard(Token.set("ABC"), "ABC;ABD "), TokenStringParseException.class);
         TestHelper.expect(() -> new MatchThreeBoard(Token.set("ABC"), " ABC;ABD"), TokenStringParseException.class);
         Board board = new MatchThreeBoard(Token.set("ABC"), "ABC;BCA;AAA");

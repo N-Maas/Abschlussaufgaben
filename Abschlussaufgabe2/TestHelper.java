@@ -43,10 +43,11 @@ public class TestHelper {
     public static void expect(Runnable code, Class<? extends Throwable> exception) {
         try {
             code.run();
-            fail(exception + " expected.");
         } catch (Throwable e) {
-            assertTrue("Expected: " + e.getClass() + ", is: " + exception, exception.isInstance(e));
+            assertTrue("Expected: " + exception + ", is: " + e.getClass(), exception.isInstance(e));
+            return;
         }
+        fail(exception + " expected.");
     }
 
     public static Iterator<Token>[] tokenIterators(String... tokens) {
